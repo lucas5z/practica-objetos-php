@@ -39,20 +39,15 @@ function Promediofinal($semenestres){
     echo "</tr>";
     echo "</table>";
 }
-$semestres=array(
-    $semenestre1,
-    $semenestre2,
-    $semenestre3,
-    $semenestre4,
-    $semenestre5,
-);
+//promedio
 function Promedio($semenestre){
+    global $notafinal;
     $suma=0;
     foreach($semenestre as $curso){
         $suma+=$curso->nota;
     }
     $pro=round($suma/3,2);
-    
+   
     return $pro;
 
 }
@@ -101,6 +96,14 @@ $semenestre5=array(
     new Curso("matica",4,18),
     new Curso("maca",3,16),
 );
+//arrry general
+$semestres=array(
+    $semenestre1,
+    $semenestre2,
+    $semenestre3,
+    $semenestre4,
+    $semenestre5,
+);
 //semestre correspondiente
 function coresen($sen){
     echo "<tr>";
@@ -139,8 +142,10 @@ despliege($semenestre2,"2022-1");
 despliege($semenestre3,"2022-2");
 despliege($semenestre4,"2023-1");
 despliege($semenestre5,"2023-2");
+//promedio final
 
 Promediofinal($semestres);
+
 ?>
 
 <style>
